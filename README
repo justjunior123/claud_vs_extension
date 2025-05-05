@@ -2,6 +2,13 @@
 
 This extension integrates Claude AI into Visual Studio Code, enabling asynchronous collaboration and providing intelligent coding assistance directly within your development environment.
 
+## Quickstart
+
+Follow the instructions found here: [Quick Start Guide](./vscode-claude-quick-start.md)
+
+For local development instructions please scroll down and read the 
+"Running Extension Locally" section!
+
 ## Features
 
 - **Chat Interface**: Communicate with Claude AI directly from VS Code
@@ -54,33 +61,67 @@ This extension integrates Claude AI into Visual Studio Code, enabling asynchrono
 - **Model**: Claude model to use (default: claude-3-7-sonnet-20250219)
 - **Temperature**: Controls randomness in responses (0-1, default: 0.7)
 
-## Extension Commands
+## Running the Extension Locally
 
-- `claudeIntegration.openPanel`: Open the Claude chat panel
-- `claudeIntegration.sendSelectionToClaude`: Send selected code to Claude
-- `claudeIntegration.explainCode`: Ask Claude to explain selected code
+To run this extension locally as a developer without publishing it, follow these steps:
 
-## Architecture
+1. **Clone the Repository**  
+   Clone the repository to your local machine:
+   ```bash
+   git clone <repository-url>
+   cd claud_vs_extension
 
-This extension uses a WebSocket server to enable asynchronous communication with Claude AI. The architecture consists of:
+2. Install Dependencies
+    Ensure you have Node.js and npm installed. Then, install the dependencies:
+    ```bash
+    npm install
 
-1. **VS Code Extension**: Handles UI integration and user interactions
-2. **WebSocket Server**: Manages communication between VS Code and Claude
-3. **Claude API Client**: Interfaces with Anthropic's Claude AI service
+3. Open the Project in VS Code
+    Open the repository folder in Visual Studio Code:
+    ```bash
+    code .
 
-## Contributing
+4. Run the Extension Locally
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+    Press F5 or go to the Run and Debug view (Ctrl+Shift+D or Cmd+Shift+D on Mac).
+    Select the Launch Extension configuration.
+    This will open a new instance of VS Code with the extension loaded.
 
-## License
+5. Test the Extension
+    In the new VS Code instance:
 
-This extension is licensed under the MIT License.
+    Use the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on Mac) to test commands like Claude: Open Chat Panel.
+    Verify the extension's functionality.
 
-## Acknowledgements
+6. Optional: Configure API Key
+    If the extension requires an API key, configure it in the settings of the new VS Code instance:
 
-- Anthropic for providing the Claude AI API
-- VS Code extension development community
+    Go to File > Preferences > Settings (or Cmd+, on Mac).
+    Search for claudeIntegration.apiKey and enter your API key.
 
----
+This setup allows you to develop and test the extension locally without publishing it.
 
-**Note**: This extension requires an API key from Anthropic to function properly. You can obtain an API key by signing up at [Anthropic's website](https://www.anthropic.com/).
+##  Extension Commands
+    claudeIntegration.openPanel: Open the Claude chat panel
+    claudeIntegration.sendSelectionToClaude: Send selected code to Claude
+    claudeIntegration.explainCode: Ask Claude to explain selected code
+    Architecture
+
+##  Architecture
+    This extension uses a WebSocket server to enable asynchronous communication with Claude AI. The architecture consists of:
+
+    1. VS Code Extension: Handles UI integration and user interactions
+    2. WebSocket Server: Manages communication between VS Code and Claude
+    3. Claude API Client: Interfaces with Anthropic's Claude AI service
+
+##  Contributing
+    Contributions are welcome! Please feel free to submit a Pull Request.
+
+##  License
+    This extension is licensed under the MIT License.
+
+    Acknowledgements
+    Anthropic for providing the Claude AI API
+    VS Code extension development community
+    Note: This extension requires an API key from Anthropic to function properly. You can obtain an API key by signing up at:
+    [Anthropic's website] (https://www.anthropic.com/)
